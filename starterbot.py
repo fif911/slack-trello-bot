@@ -5,13 +5,14 @@ import random
 from datetime import datetime, timedelta
 # --------------------------- CONSTANTS AND API
 
+VALET_SLACK_TOKEN = 'SLACK TOKEN HERE'
+
+
+
+
 trello = TrelloApi("905145fc51f29a1777f509d92ba8ba89")
 trello.set_token("fd94100903a3bac516258849865a9040a291d7af82599d55c8cc2c336cb547ea")
 SOCKET_DELAY = 1
-
-# VALET_SLACK_TOKEN = 'xoxb-204879127824-13EALoKb9K7ksf6D4tgl8Rs0'
-VALET_SLACK_TOKEN = 'xoxb-204879127824-IBHah49n0GSxX7eVeqxJHK4u'
-# VALET_SLACK_TOKEN = 'xoxp-21900587206-197603488965-206575940115-c2fef84e3dc9b0f4a368509a6cdc2f75'
 VALET_SLACK_ID = "U60RV3RQ8"
 VALET_SLACK_NAME = 'megatron'
 
