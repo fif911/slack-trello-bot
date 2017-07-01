@@ -9,7 +9,9 @@ trello = TrelloApi("905145fc51f29a1777f509d92ba8ba89")
 trello.set_token("fd94100903a3bac516258849865a9040a291d7af82599d55c8cc2c336cb547ea")
 SOCKET_DELAY = 1
 
-VALET_SLACK_TOKEN = 'xoxb-204879127824-13EALoKb9K7ksf6D4tgl8Rs0'
+# VALET_SLACK_TOKEN = 'xoxb-204879127824-13EALoKb9K7ksf6D4tgl8Rs0'
+VALET_SLACK_TOKEN = 'xoxb-204879127824-IBHah49n0GSxX7eVeqxJHK4u'
+# VALET_SLACK_TOKEN = 'xoxp-21900587206-197603488965-206575940115-c2fef84e3dc9b0f4a368509a6cdc2f75'
 VALET_SLACK_ID = "U60RV3RQ8"
 VALET_SLACK_NAME = 'megatron'
 
@@ -292,8 +294,8 @@ def handle_message(message, user, channel,comands_availible):
                       "(I won't remind you about it)\n" \
                        "*@cl* - To create new list on trello for each user in slack team\n" \
                        "*@cl* + _board id_- To create new list on trello for each user in slack team" \
-                      " on the specified board and and then work with it\n" \
-                      "if i *working slow* you can clean my remind list by saying '@"+VALET_SLACK_NAME+" clean'\n" \
+                      " on the specified board and then work with it\n" \
+                      "if i *working slow* you can clean my remind list by command '*@clean*'\n" \
                        "or just say hello to me :wink:\n" \
                        ":warning: Don't use '##' and '###' - *it's my special char!*"
             post_message(message=help_text,channel=channel)
@@ -419,8 +421,6 @@ def run():
 
             if i % 10 == 0:
                 i=0
-
-
                 check_if_need_to_remind()
 
             i+=1
