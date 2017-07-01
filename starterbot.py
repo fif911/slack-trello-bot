@@ -4,16 +4,14 @@ import os, slackclient, time
 import random
 from datetime import datetime, timedelta
 # --------------------------- CONSTANTS AND API
+
 BOT_SLACK_TOKEN = "BOT SLACK TOKEN HERE"
 
 trello = TrelloApi("905145fc51f29a1777f509d92ba8ba89")
 trello.set_token("fd94100903a3bac516258849865a9040a291d7af82599d55c8cc2c336cb547ea")
 SOCKET_DELAY = 1
-
-
 VALET_SLACK_ID = "U60RV3RQ8"
 VALET_SLACK_NAME = 'megatron'
-
 valet_slack_client = slackclient.SlackClient(BOT_SLACK_TOKEN)
 EVERY_DAY_REMIND_HOUR = datetime.now().replace(hour=17, minute=00, second=00)
 
