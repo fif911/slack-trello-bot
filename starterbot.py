@@ -4,21 +4,19 @@ import os, slackclient, time
 import random
 from datetime import datetime, timedelta
 # --------------------------- CONSTANTS AND API
-
-VALET_SLACK_TOKEN = 'SLACK TOKEN HERE'
-
-
-
+BOT_SLACK_TOKEN = "BOT SLACK TOKEN HERE"
 
 trello = TrelloApi("905145fc51f29a1777f509d92ba8ba89")
 trello.set_token("fd94100903a3bac516258849865a9040a291d7af82599d55c8cc2c336cb547ea")
 SOCKET_DELAY = 1
+
+
 VALET_SLACK_ID = "U60RV3RQ8"
 VALET_SLACK_NAME = 'megatron'
 
-valet_slack_client = slackclient.SlackClient(VALET_SLACK_TOKEN)
+valet_slack_client = slackclient.SlackClient(BOT_SLACK_TOKEN)
 EVERY_DAY_REMIND_HOUR = datetime.now().replace(hour=17, minute=00, second=00)
-global COMMANDS_AVAILABLE
+
 # --------------------------- METHODS
 def create_or_pass_files():
     file1_exist=os.path.isfile("task_list.txt")
@@ -175,7 +173,7 @@ def handle_task(command, user, channel,related_user):
 def is_help(message):
     tokens = [word.lower() for word in message.strip().split()]
     return any(g in tokens
-               for g in ['help', '-help' 'need help', 'i need your help', 'help me', 'help me pls', 'heelp'])
+               for g in ['help', '-help', 'heelp'])
 def is_hi(message):
     tokens = [word.lower() for word in message.strip().split()]
     return any(g in tokens
@@ -296,7 +294,7 @@ def handle_message(message, user, channel,comands_availible):
                        "*@cl* - To create new list on trello for each user in slack team\n" \
                        "*@cl* + _board id_- To create new list on trello for each user in slack team" \
                       " on the specified board and then work with it\n" \
-                      "if i *working slow* you can clean my remind list by command '*@clean*'\n" \
+                      "if i *working slow* you can clean my remind list by command *\'@clean\'*\n" \
                        "or just say hello to me :wink:\n" \
                        ":warning: Don't use '##' and '###' - *it's my special char!*"
             post_message(message=help_text,channel=channel)
